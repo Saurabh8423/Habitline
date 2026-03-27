@@ -87,6 +87,190 @@
   100% { transform: translateX(-50%); }
 }
 
+.showcase {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #f3f3f3;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========================= */
+/* CENTER */
+/* ========================= */
+
+.showcase-center {
+  position: relative;
+  z-index: 5;
+}
+
+.showcase-center img {
+  width: 900px;
+  max-width: 90%;
+  border-radius: 16px;
+}
+
+/* ========================= */
+/* WRAPPER (IMPORTANT) */
+/* ========================= */
+
+.scroll-wrapper {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  top: 27%;
+}
+
+.scroll-wrapper.bottom {
+  top: auto;
+  bottom: 30%;
+}
+
+/* ========================= */
+/* TRACK (REAL ANIMATION) */
+/* ========================= */
+
+.scroll-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* LEFT MOVE */
+.scroll-track.left {
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* RIGHT MOVE */
+.scroll-track.right {
+  animation: scrollRight 25s linear infinite;
+}
+
+/* PERFECT LOOP */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.mini-card {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================= */
+/* EMOJI FLOAT */
+/* ========================= */
+
+.emoji {
+  position: absolute;
+  bottom: 10px;
+  font-size: 18px;
+  opacity: 0;
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .showcase {
+    height: 420px;
+  }
+
+  .mini-card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .scroll-track.left,
+  .scroll-track.right {
+    animation-duration: 18s;
+  }
+}
+
+/* ========================= */
+/* 🔥 EMOJI FLOAT ANIMATION */
+/* ========================= */
+
+.mini-card {
+  position: relative; /* IMPORTANT */
+}
+
+/* EMOJI */
+.emoji {
+  position: absolute;
+  bottom: 10px;
+  font-size: 18px;
+  opacity: 0;
+
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+
+/* FLOAT UP */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
 /* ========================= */
 /* ✅ TABLET (<=1024px) */
 /* ========================= */
