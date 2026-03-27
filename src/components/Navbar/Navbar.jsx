@@ -1,19 +1,24 @@
 import { useState } from "react";
 import "./Navbar.css";
 
+// 🔥 ADD YOUR ICONS HERE
+import logoIcon from "../../assets/Icon.png";
+import appleIcon from "../../assets/v1.png";
+import playIcon from "../../assets/v2.png";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
 
-      {/* Left Logo */}
+      {/* LEFT LOGO */}
       <div className="logo-box">
-        <span className="dot"></span>
+        <img src={logoIcon} alt="logo" className="logo-icon" />
         <span className="logo-text">Habitline</span>
       </div>
 
-      {/* Center Menu */}
+      {/* CENTER MENU */}
       <div className={`menu-box ${menuOpen ? "active" : ""}`}>
         <ul className="menu">
           <li>What's inside</li>
@@ -23,16 +28,21 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Right Side */}
+      {/* RIGHT SIDE */}
       <div className="right-section">
 
-        {/* Icons */}
+        {/* ICON BUTTONS */}
         <div className="icon-box">
-          <button></button>
-          <button>▶</button>
+          <button className="icon-btn">
+            <img src={appleIcon} alt="apple" />
+          </button>
+
+          <button className="icon-btn">
+            <img src={playIcon} alt="play" />
+          </button>
         </div>
 
-        {/* Hamburger */}
+        {/* HAMBURGER */}
         <div 
           className={`hamburger ${menuOpen ? "open" : ""}`} 
           onClick={() => setMenuOpen(!menuOpen)}

@@ -1,4 +1,6 @@
 import "./Download.css";
+import d1 from "../../assets/d1.png";
+import d2 from "../../assets/d2.png";
 
 const Download = () => {
   return (
@@ -22,11 +24,13 @@ const Download = () => {
       {/* Buttons */}
       <div className="download-buttons">
         <button className="btn apple">
-           Download for iPhone
+          <img src={d1} alt="logo" className="btn-icon" />
+           <span>Download for iPhone</span>
         </button>
 
         <button className="btn android">
-          🤖 Get it on Android
+          <img src={d2} alt="logo" className="btn-icon" />
+          <span>Get it on Android</span>
         </button>
       </div>
 

@@ -4,7 +4,7 @@
 
 .footer {
   background: #f3f3f3;
-  padding: 70px 80px 30px;
+  padding: 50px 80px 30px;
   color: #333;
 }
 
@@ -30,12 +30,10 @@
   margin-bottom: 20px;
 }
 
-.logo-icon {
-  background: linear-gradient(135deg, #f4a261, #ff7b00);
+.logo-icons {
   color: white;
   padding: 10px;
   border-radius: 50%;
-  margin-right: 10px;
   font-size: 14px;
 }
 
@@ -106,7 +104,6 @@
 
 .footer-bottom {
   border-top: 1px solid #ddd;
-  margin-top: 50px;
   padding-top: 20px;
 
   display: flex;

@@ -49,7 +49,7 @@
   margin-right: auto;
 }
 
-/* BUTTONS */
+/* BUTTON WRAPPER */
 .download-buttons {
   margin-top: 30px;
   display: flex;
@@ -58,23 +58,59 @@
   flex-wrap: wrap;
 }
 
+/* COMMON BUTTON STYLE */
 .btn {
-  padding: 14px 26px;
+  display: flex;
+  align-items: center;       /* ✅ vertical center */
+  justify-content: center;   /* ✅ horizontal center */
+  gap: 10px;
+
+  height: 54px;              /* ✅ SAME HEIGHT */
+  padding: 0 26px;           /* remove uneven padding */
+
   border-radius: 40px;
   border: none;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
+
   cursor: pointer;
   transition: 0.3s;
+
+  min-width: 220px;          /* ✅ SAME WIDTH LOOK */
 }
 
-/* Apple */
+/* ICON */
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* TEXT */
+.btn span {
+  display: flex;
+  align-items: center;
+}
+
+/* APPLE BUTTON */
 .apple {
   background: black;
   color: white;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .apple:hover {
+  transform: translateY(-2px);
+}
+
+/* ANDROID BUTTON */
+.android {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.android:hover {
+  background: #dcdcdc;
   transform: translateY(-2px);
 }
 

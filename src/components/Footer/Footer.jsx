@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import logoIcon from "../../assets/Icon.png";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="footer-left">
           <div className="logo">
-            <span className="logo-icon">⊖</span>
+            <img src={logoIcon} alt="logo" className="logo-icons" />
             <span className="logo-text">Habitline</span>
           </div>
 
