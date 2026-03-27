@@ -1,0 +1,325 @@
+.consistency {
+  position: relative;
+  background: #f3f3f3;
+  padding: 90px 20px 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Top badge */
+.consistency-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Heading */
+.consistency h2 {
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+/* Big number */
+.big-number-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.big-number {
+  font-size: 110px;
+  line-height: 0.95;
+  font-weight: 700;
+  color: #ff5a00;
+  text-shadow: 0 6px 22px rgba(255, 90, 0, 0.25);
+  margin: 0;
+  letter-spacing: -4px;
+}
+
+/* Floating label */
+.floating-label {
+  position: absolute;
+  right: -80px;
+  top: 75px;
+  background: white;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  transform: rotate(10deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+/* Globe wrapper */
+.globe-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: -10px;
+  z-index: 2;
+}
+
+/* Globe visible area */
+.globe-mask {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 520px; /* controls visible globe area */
+}
+
+/* Globe video */
+.globe-video {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+  pointer-events: none;
+
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.05);
+
+  animation: globeFloat 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Hide upper white video area */
+.globe-mask::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(243, 243, 243, 0) 58%,
+      rgba(243, 243, 243, 0.25) 72%,
+      rgba(243, 243, 243, 0.65) 86%,
+      rgba(243, 243, 243, 1) 100%
+    );
+}
+
+/* Hide side white edges */
+.globe-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      rgba(243, 243, 243, 1) 0%,
+      rgba(243, 243, 243, 0) 10%,
+      rgba(243, 243, 243, 0) 90%,
+      rgba(243, 243, 243, 1) 100%
+    );
+}
+
+/* Bottom cloud layer covering half globe */
+.cloud-fade {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 220px;
+  z-index: 5;
+  pointer-events: none;
+  filter: blur(10px);
+
+  background:
+    radial-gradient(circle at 10% 75%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.95) 14%, rgba(243,243,243,0) 35%),
+    radial-gradient(circle at 22% 60%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.94) 16%, rgba(243,243,243,0) 38%),
+    radial-gradient(circle at 35% 72%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.93) 18%, rgba(243,243,243,0) 40%),
+    radial-gradient(circle at 50% 62%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.95) 18%, rgba(243,243,243,0) 40%),
+    radial-gradient(circle at 65% 75%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.92) 16%, rgba(243,243,243,0) 38%),
+    radial-gradient(circle at 80% 65%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.93) 16%, rgba(243,243,243,0) 38%),
+    radial-gradient(circle at 92% 75%, rgba(243,243,243,1) 0%, rgba(243,243,243,0.9) 14%, rgba(243,243,243,0) 35%),
+    linear-gradient(
+      to top,
+      rgba(243,243,243,1) 0%,
+      rgba(243,243,243,0.98) 22%,
+      rgba(243,243,243,0.88) 42%,
+      rgba(243,243,243,0.55) 62%,
+      rgba(243,243,243,0.18) 82%,
+      rgba(243,243,243,0) 100%
+    );
+}
+
+.cloud-image {
+  position: absolute;
+  top: -260px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 115%;
+  max-width: 1100px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 6;
+  .cloud-image {
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+}
+}
+
+/* Bottom stats */
+.bottom-stats {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: -170px;
+  position: relative;
+  z-index: 7;
+  flex-wrap: wrap;
+  margin-left: 35px;
+}
+
+.stat-box {
+  text-align: center;
+  max-width: 200px;
+}
+
+.stat-box h3 {
+  font-size: 54px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.stat-box h3 span {
+  color: #7c3aed;
+}
+
+.stat-box:nth-child(3) h3 span {
+  color: #2f5cff;
+}
+
+.stat-box p {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #555;
+  margin: 0;
+}
+
+/* ========================= */
+/* ✅ TABLET (<= 992px) */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .consistency h2 {
+    font-size: 42px;
+  }
+
+  .big-number {
+    font-size: 80px;
+  }
+
+  .floating-label {
+    right: -40px;
+    top: 40px;
+    font-size: 12px;
+  }
+
+  .globe-mask {
+    height: 380px;
+  }
+
+  .cloud-image {
+    width: 140%;
+    top: -120px;
+  }
+
+  .bottom-stats {
+    margin-top: -130px;
+    gap: 20px;
+  }
+
+  .stat-box h3 {
+    font-size: 44px;
+  }
+}
+
+/* ========================= */
+/* ✅ MOBILE (<= 768px) */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .consistency {
+    padding: 60px 15px;
+  }
+
+  .consistency h2 {
+    font-size: 28px;
+  }
+
+  .big-number {
+    font-size: 56px;
+  }
+
+  /* FIX: floating label becomes normal */
+  .floating-label {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .globe-mask {
+    height: 340px;
+  }
+
+  .cloud-image {
+    width: 160%;
+    top: -120px;
+  }
+
+  /* FIX: remove overlap */
+  .bottom-stats {
+    margin-top: -80px;
+    gap: 18px;
+  }
+
+  .stat-box h3 {
+    font-size: 36px;
+  }
+}
+
+/* ========================= */
+/* ✅ SMALL MOBILE (<= 480px) */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .consistency h2 {
+    font-size: 24px;
+  }
+
+  .big-number {
+    font-size: 46px;
+  }
+
+  .stat-box h3 {
+    font-size: 30px;
+  }
+
+  .stat-box p {
+    font-size: 13px;
+  }
+}

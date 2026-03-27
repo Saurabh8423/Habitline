@@ -1,0 +1,258 @@
+.achievements {
+  padding: 90px 80px;
+  background: #f3f3f3;
+  color: #111;
+}
+
+/* Header */
+.achievements-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+}
+
+.achievements-header h2 {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0;
+  margin-left: 0;
+  max-width: 65%;
+}
+
+/* Rating box */
+.rating-box {
+  text-align: center;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.avatars img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  margin-left: -8px;
+}
+
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.you-badge {
+  margin-left: -8px;
+  background: #111;
+  color: white;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+.stars {
+  color: #f5a623;
+  font-size: 18px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+
+.rating-box p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Grid */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Card */
+.achievement-card {
+  position: relative;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.35s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+}
+
+.achievement-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+}
+
+.achievement-content {
+  position: relative;
+  z-index: 2;
+  padding: 22px;
+  width: 100%;
+  color: white;
+}
+
+.room-title {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+}
+
+.achievement-text {
+  margin-top: 260px;
+}
+
+.achievement-text h3 {
+  font-size: 28px;
+  margin: 0 0 6px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.achievement-text p {
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.92);
+}
+
+.large-text .achievement-text h3 {
+  font-size: 38px;
+}
+
+/* ========================= */
+/* ✅ TABLET (<= 1024px) */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .achievements {
+    padding: 80px 40px;
+  }
+
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievements-header h2 {
+    font-size: 38px;
+    max-width: 60%;
+  }
+
+  .achievement-card {
+    height: 360px;
+  }
+
+  .achievement-text h3 {
+    font-size: 24px;
+  }
+
+   .rating-box {
+    width: 100%;
+    text-align: right;
+  }
+
+  .avatars {
+    justify-content: flex-end;
+  }
+}
+
+/* ========================= */
+/* ✅ MOBILE (<= 768px) */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .achievements {
+    padding: 60px 20px;
+  }
+
+  .achievements-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .achievements-header h2 {
+    font-size: 26px;
+    max-width: 65%;
+  }
+
+  .rating-box {
+    width: 100%;
+    text-align: right;
+  }
+
+  .avatars {
+    justify-content: flex-end;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card {
+    height: 320px;
+  }
+
+  .achievement-text h3 {
+    font-size: 22px;
+  }
+
+  .large-text .achievement-text h3 {
+    font-size: 26px;
+  }
+}
+
+/* ========================= */
+/* ✅ SMALL MOBILE (<= 480px) */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .achievements-header {
+    display: flex;
+    align-items: flex-start;
+  }
+  .achievements-header h2 {
+    font-size: 22px;
+    max-width: 70%;
+  }
+  .rating-box {
+    transform: scale(0.9);
+  }
+
+  .achievement-card {
+    height: 280px;
+  }
+
+  .achievement-text h3 {
+    font-size: 20px;
+  }
+
+  .achievement-text p {
+    font-size: 13px;
+  }
+}

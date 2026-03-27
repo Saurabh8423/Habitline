@@ -1,0 +1,182 @@
+.showcase {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #f3f3f3;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========================= */
+/* CENTER LAPTOP */
+/* ========================= */
+
+.showcase-center {
+  position: relative;
+  z-index: 5;
+}
+
+.showcase-center img {
+  width: 900px;
+  max-width: 90%;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+/* ========================= */
+/* SCROLL ROW */
+/* ========================= */
+
+.scroll-row {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+/* Row positions */
+.row-left {
+  top: 27%;
+  animation: moveLeft 25s linear infinite;
+}
+
+.row-right {
+  bottom: 30%;
+  animation: moveRight 25s linear infinite;
+}
+
+/* ========================= */
+/* MINI CARD */
+/* ========================= */
+
+.mini-card {
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.mini-card:hover {
+  transform: scale(1.05);
+}
+
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes moveLeft {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========================= */
+/* ✅ TABLET (<=1024px) */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .showcase {
+    height: 500px;
+  }
+
+  .showcase-center img {
+    width: 700px;
+  }
+
+  .mini-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .row-left {
+    top: 28%;
+  }
+
+  .row-right {
+    bottom: 28%;
+  }
+}
+
+/* ========================= */
+/* ✅ MOBILE (<=768px) */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .showcase {
+    height: 420px;
+  }
+
+  .showcase-center img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .mini-card {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+  }
+
+  .scroll-row {
+    gap: 12px;
+  }
+
+  /* Move rows closer */
+  .row-left {
+    top: 32%;
+    animation-duration: 18s; /* faster */
+  }
+
+  .row-right {
+    bottom: 32%;
+    animation-duration: 18s;
+  }
+}
+
+/* ========================= */
+/* ✅ SMALL MOBILE (<=480px) */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .showcase {
+    height: 350px;
+  }
+
+  .showcase-center img {
+    max-width: 320px;
+  }
+
+  .mini-card {
+    width: 55px;
+    height: 55px;
+  }
+
+  .scroll-row {
+    gap: 10px;
+  }
+
+  .row-left {
+    top: 35%;
+  }
+
+  .row-right {
+    bottom: 35%;
+  }
+}

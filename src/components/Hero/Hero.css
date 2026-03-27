@@ -1,0 +1,192 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px 0 0;
+  overflow: hidden;
+}
+
+/* CONTENT */
+.hero-content {
+  max-width: 1000px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  margin-top: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+/* BADGE */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #eaeaea;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.badge-new {
+  background: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.badge-2 {
+  font-size: 12px;
+  color: #000000;
+}
+
+/* TEXT CONTAINER */
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ✅ FORCE LEFT ALIGN */
+  text-align: left;        /* ✅ IMPORTANT */
+}
+
+/* FLOATING NOTIFICATIONS */
+.hero-notifications {
+  position: absolute;
+  right: 25px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* CARD */
+/* CARD UPDATED */
+.notify-card {
+  display: flex;
+  align-items: right;
+  margin-right: -38px;
+  gap: 12px;
+  background: #ffffff;
+  padding: 5px 16px;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  min-width: 250px;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT (optional but nice) */
+.notify-card:hover {
+  transform: translateY(-2px);
+}
+
+/* FLAG ICON */
+.flag {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  align-items: center;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+/* NAME */
+.name {
+  font-size: 12px;
+  font-weight: 600;
+  align-items: start;
+  color: #000;
+}
+
+/* JOINED TEXT */
+.joined {
+  font-weight: 400;
+  color: #777;
+  margin-left: 4px;
+}
+
+/* STATUS */
+.status {
+  font-size: 12px;
+  color: #777;
+  margin: 2px 0 0;
+}
+
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-notifications {
+    right: 10px;
+    top: 40%;
+  }
+
+  .notify-card {
+    min-width: 220px;
+    padding: 6px 12px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* 🔥 MOVE CARDS BELOW */
+  .hero-notifications {
+    position: static;
+    margin-top: 30px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .notify-card {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 8px; /* full rounded on mobile */
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 20px;
+  }
+
+  .notify-card {
+    max-width: 280px;
+  }
+}

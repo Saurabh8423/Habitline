@@ -1,0 +1,271 @@
+/* ========================= */
+/* MAIN FOOTER */
+/* ========================= */
+
+.footer {
+  background: #f3f3f3;
+  padding: 70px 80px 30px;
+  color: #333;
+}
+
+/* Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ========================= */
+/* LEFT SECTION */
+/* ========================= */
+
+.footer-left {
+  max-width: 320px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #f4a261, #ff7b00);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.footer-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-subtext {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================= */
+/* RIGHT LINKS */
+/* ========================= */
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-column h4 {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-column a {
+  display: block;
+  text-decoration: none;
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* hover underline animation */
+.footer-column a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #ff7b00;
+  transition: 0.3s;
+}
+
+.footer-column a:hover::after {
+  width: 100%;
+}
+
+.footer-column a:hover {
+  color: #000;
+}
+
+/* ========================= */
+/* BOTTOM */
+/* ========================= */
+
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ========================= */
+/* SOCIAL ICONS (ANIMATED) */
+/* ========================= */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover animation */
+.social-icons a:hover {
+  color: white;
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* Different colors */
+.social-icons a:nth-child(1):hover {
+  background: #e1306c;
+}
+
+.social-icons a:nth-child(2):hover {
+  background: #0077b5;
+}
+
+.social-icons a:nth-child(3):hover {
+  background: #1877f2;
+}
+
+.social-icons a:nth-child(4):hover {
+  background: #000;
+}
+
+/* Glow effect */
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(12px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.social-icons a:hover::before {
+  opacity: 0.6;
+}
+
+/* ========================= */
+/* ✅ TABLET */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 60px 40px 30px;
+  }
+
+  .footer-links {
+    gap: 40px;
+  }
+
+  .footer-heading {
+    font-size: 18px;
+  }
+}
+
+/* ========================= */
+/* ✅ MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 20px 20px;
+  }
+
+  .footer-container {
+    flex-direction:column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-left {
+    max-width: 100%;
+    margin-left: 20px;
+  }
+
+  /* Stack columns nicely */
+  .footer-links {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    gap: 120px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-column h4 {
+    font-size: 14px;
+  }
+
+  .footer-column a {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ========================= */
+/* ✅ SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-heading {
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+}
