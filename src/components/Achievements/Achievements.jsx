@@ -8,16 +8,27 @@ import familyImg from "../../assets/A4.png";
 const achievementData = [
   {
     image: studyImg,
+    title: "Study Room",
+    badge: "STUDY ROOM",
+    mainText: "Completed 21-day streak using Habitline",
   },
   {
     image: gymImg,
-    large: true,
+    title: "Gym Room",
+    badge: "GYM ROOM",
+    mainText: "Completed 21-day streak using Habitline",
   },
   {
     image: meditationImg,
+    title: "Meditation Room",
+    badge: "MEDITATION ROOM",
+    mainText: "Completed 21-day streak using Habitline",
   },
   {
     image: familyImg,
+    title: "Do Anything Room",
+    badge: "DO ANYTHING ROOM",
+    mainText: "Completed 21-day streak using Habitline",
   },
 ];
 
@@ -53,12 +64,29 @@ const Achievements = () => {
             <div className="achievement-overlay"></div>
 
             <div className="achievement-content">
-              <span className="room-title">{item.title}</span>
+              <div className="card-top">
+                <h3 className="room-title">{item.title}</h3>
+
+                <div className="live-badge">
+                  <span className="dot"></span> 1642 Live
+                </div>
+              </div>
 
               <div className="achievement-text">
+                 {/* Bottom Badge */}
+  <div className="bottom-badge">
+    {item.badge}
+  </div>
                 <h3>{item.mainText}</h3>
-                <p>{item.subText}</p>
               </div>
+
+              {/* Hover Button */}
+              <button
+                className="join-btn"
+                onClick={() => alert(`Joining ${item.title}`)}
+              >
+                Join Now
+              </button>
             </div>
           </div>
         ))}

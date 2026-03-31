@@ -6,7 +6,7 @@ const Download = () => {
   return (
     <section className="download">
       <div className="download-header">
-         <h1>The Silent Revolution</h1>
+        <h1>The Silent Revolution</h1>
       </div>
 
       {/* Rating */}
