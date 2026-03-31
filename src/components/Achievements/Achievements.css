@@ -304,10 +304,6 @@
     text-align: right;
   }
 
-  .avatars {
-    justify-content: flex-end;
-  }
-
   .achievement-grid {
     grid-template-columns: 1fr;
   }

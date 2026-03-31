@@ -16,13 +16,75 @@
 .showcase-center {
   position: relative;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .showcase-center img {
   width: 900px;
   max-width: 90%;
+  margin-bottom: 40px;
+  align-items: center;
   border-radius: 16px;
   transition: 0.3s;
+}
+
+.laptop-frame {
+  width: 100%;
+  display: block;
+}
+
+.laptop-screen {
+  position: absolute;
+  top: 2%;
+  left: 14.1%;
+  width: 73%;
+  height: 78%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.screen-header-container {
+  position: absolute;
+  top: 60px;
+  left: 110px;
+  width: 60%;
+  height: 80px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.screen-header {
+  width: 180px;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  opacity: 20%;
+}
+
+.screen-video-container {
+  position: absolute;
+  top: 130px; /* 🔥 same as header height */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.screen-video {
+  width: 98%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.95) saturate(1.1);
+}
+
+.laptop-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  pointer-events: none;
 }
 
 /* ========================= */
@@ -218,26 +280,6 @@
 }
 
 /* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media (max-width: 768px) {
-  .showcase {
-    height: 420px;
-  }
-
-  .mini-card {
-    width: 70px;
-    height: 70px;
-  }
-
-  .scroll-track.left,
-  .scroll-track.right {
-    animation-duration: 18s;
-  }
-}
-
-/* ========================= */
 /* 🔥 EMOJI FLOAT ANIMATION */
 /* ========================= */
 
@@ -275,31 +317,41 @@
 /* ✅ TABLET (<=1024px) */
 /* ========================= */
 
+
 @media (max-width: 1024px) {
   .showcase {
     height: 500px;
   }
 
   .showcase-center img {
-    width: 700px;
+    width: 650px;
+  }
+
+  .screen-header {
+    width: 120px;
+  }
+
+  .screen-header-container {
+    height: 35px;
+    left: 100px;
+  }
+
+  .screen-video-container {
+    top: 90px;
   }
 
   .mini-card {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
-  .row-left {
-    top: 28%;
-  }
-
-  .row-right {
-    bottom: 28%;
+  .scroll-row {
+    gap: 14px;
   }
 }
 
 /* ========================= */
-/* ✅ MOBILE (<=768px) */
+/* RESPONSIVE  (<=768px)*/
 /* ========================= */
 
 @media (max-width: 768px) {
@@ -309,30 +361,42 @@
 
   .showcase-center img {
     width: 90%;
-    max-width: 500px;
+    max-width: 480px;
+  }
+
+  .screen-header {
+    width: 100px;
+  }
+
+  .screen-header-container {
+    height: 8px;
+    left: 70px;
+    
+  }
+
+  .screen-video-container {
+    top: 65px;
+    height: calc(100% - 55px);
   }
 
   .mini-card {
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
+    width: 65px;
+    height: 65px;
   }
 
   .scroll-row {
-    gap: 12px;
+    gap: 10px;
   }
 
-  /* Move rows closer */
   .row-left {
-    top: 32%;
-    animation-duration: 18s; /* faster */
+    top: 34%;
   }
 
   .row-right {
-    bottom: 32%;
-    animation-duration: 18s;
+    bottom: 34%;
   }
 }
+
 
 /* ========================= */
 /* ✅ SMALL MOBILE (<=480px) */
@@ -343,24 +407,33 @@
     height: 350px;
   }
 
+  .showcase-center {
+  margin-top: 30px;
+}
+
   .showcase-center img {
     max-width: 320px;
   }
 
+  .screen-header {
+    width: 85px;
+  }
+
+  .screen-header-container {
+    margin-top: -15px;
+    left: 40px;
+  }
+
+  .screen-video-container {
+    top: 45px;
+  }
+
   .mini-card {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
 
   .scroll-row {
-    gap: 10px;
-  }
-
-  .row-left {
-    top: 35%;
-  }
-
-  .row-right {
-    bottom: 35%;
+    gap: 8px;
   }
 }

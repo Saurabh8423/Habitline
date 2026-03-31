@@ -1,6 +1,6 @@
 import "./ConsistencyStats.css";
 import globeVideo from "../../assets/globe-video.mp4";
-import cloudImg from "../../assets/cloud.png"; // add your cloud image
+import cloudImg from "../../assets/cloud.png";
 
 const ConsistencyStats = () => {
   return (

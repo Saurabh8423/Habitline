@@ -127,8 +127,13 @@
 /* ========================= */
 @media (max-width: 1024px) {
 
+  .hero {
+    flex-direction: column;
+    padding: 50px 15px;
+  }
+
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .hero-notifications {
